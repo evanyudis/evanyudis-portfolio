@@ -10,8 +10,64 @@
 
 - **Framework:** Next.js 15 (App Router)
 - **Styling:** Tailwind CSS v4
-- **Deployment:** Vercel (inferred from Next.js ecosystem)
-- **Content:** Hardcoded from scraped evanyudis.framer.ai content
+- **Deployment:** Vercel
+- **Database:** Supabase (PostgreSQL) — projects content management
+- **CMS Workflow:** Add/update/delete project entries via Hermes → Supabase → auto-generated static/dynamic pages
+
+## Content Management Architecture
+
+### Supabase Schema
+
+**Table: `projects`**
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | uuid | Primary key |
+| slug | text | URL slug (unique) — e.g., `kredivo-design-system` |
+| title | text | Project title — e.g., `Flex Design System — Kredivo` |
+| tags | text[] | Array — e.g., `["Mobile", "Product", "Design System"]` |
+| role | text | My role in the project |
+| team | text | Team composition |
+| year | text | Year range — e.g., `2025` |
+| context | text | Case study context section (markdown) |
+| background | text | Background section (markdown) |
+| problem | text | Problem statement (markdown) |
+| design_goals | text | Design goals (markdown) |
+| process | jsonb | Design process steps — array of `{step: string, content: text}` |
+| deliverables | text | Final deliverables (markdown) |
+| impact | text | Impact & outcomes (markdown) |
+| takeaways | text | Key takeaways (markdown) |
+| featured | boolean | Show on landing page work grid |
+| created_at | timestamptz | Auto-set on insert |
+| updated_at | timestamptz | Auto-updated on update |
+
+### Content Workflow
+
+```
+User (Telegram/Hermes)
+    ↓ "Add new project X"
+Hermes (Supabase skill)
+    ↓ INSERT into projects table
+Supabase
+    ↓ Row inserted with slug
+Next.js ISR/SSR
+    ↓ Revalidates /projects/[slug]
+Vercel / Static Generation
+    ↓ New page available at /projects/new-slug
+```
+
+### What Hermes Handles
+
+- **Create project:** `INSERT` new row → slug auto-generated or user-provided
+- **Update project:** `UPDATE` existing row by slug
+- **Delete project:** `DELETE` row by slug
+- **List projects:** `SELECT` all for landing page grid
+
+### What Next.js Handles
+
+- `/` → `SELECT * FROM projects WHERE featured = true` → render work grid
+- `/projects/[slug]` → `SELECT * FROM projects WHERE slug = $1` → render case study
+- ISR (Incremental Static Regeneration) for auto-revalidation on content change
 
 ---
 
@@ -216,15 +272,31 @@ Optional: `/about` merged into landing.
 
 ## Implementation Approach
 
-**Page-by-page rebuild (Option A):**
+**Page-by-page rebuild with Supabase CMS (Option A):**
 
-1. Setup Next.js 15 + Tailwind v4 project
-2. Define Ollama design tokens in Tailwind config
-3. Build shared components (Button, Card, Tag, Section)
-4. Implement `/` landing page
-5. Implement `/projects/[slug]` dynamic route
-6. Add case study content (Kredivo DS, Tokopedia Checkout)
-7. Deploy to Vercel
+### Phase 1: Setup
+1. Initialize Next.js 15 + Tailwind v4 project
+2. Configure Supabase client (env vars, connection)
+3. Create `projects` table in Supabase
+4. Add existing projects as rows (Kredivo DS, Tokopedia Checkout, etc.)
+
+### Phase 2: Design System + Components
+5. Define Ollama design tokens in Tailwind config
+6. Build shared components (Button, Card, Tag, Section)
+7. Create layout shell with navigation
+
+### Phase 3: Pages
+8. Implement `/` landing page — fetch featured projects from Supabase
+9. Implement `/projects/[slug]` dynamic route — fetch by slug, render case study
+10. Add ISR (Incremental Static Regeneration) for auto-revalidation
+
+### Phase 4: Content Migration
+11. Seed existing portfolio content into Supabase
+12. Verify all pages render correctly
+
+### Phase 5: Deploy
+13. Deploy to Vercel
+14. Configure Supabase env vars in Vercel
 
 ---
 
