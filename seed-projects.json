@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "kredivo-design-system",
+    "title": "Flex Design System — Kredivo",
+    "tags": ["Mobile", "Product", "Design System"],
+    "role": "Concept, UI/UX Design, Design System",
+    "team": "Product Designers, Engineers, Product Managers",
+    "year": "2025",
+    "featured": true,
+    "context": "As a Senior Product Designer at Kredivo, I was assigned as the sole Design PIC to establish a scalable Design System that could support multiple product teams and increasing product complexity. This initiative focused on building a single source of truth for design—enabling consistency, efficiency, and long-term scalability across Kredivo's products.",
+    "background": "When I first joined, Kredivo already had a 'Design System' file in Figma. However, in practice, it functioned primarily as a component collection, not a true system. There was no clear hierarchy, ownership, or usage rules. Components were created independently by each designer, leading to widespread duplication and visual inconsistencies. As the product continued to scale, this approach introduced significant design debt and slowed down iteration.",
+    "problem": "As Kredivo's product ecosystem grew, the absence of a scalable design foundation resulted in increasing inefficiency, inconsistency, and long-term maintenance risks—making it difficult to sustain both quality and velocity.",
+    "design_goals": "- Establish a scalable Design System based on Atomic Design\n- Define a clear set of core components\n- Provide explicit rules for structure, behavior, and usage\n- Reduce duplication and improve consistency across products\n- Enable faster and more effective design decisions",
+    "process": [
+      {"step": "01 Design System Audit", "content": "I began by conducting a comprehensive audit of the existing Design System file. This included reviewing all components, identifying overlapping patterns, and mapping areas of duplication and inconsistency. The audit revealed that incremental cleanup would not be sufficient. A full restructuring was required to support scalability.\n\nTwo main issues uncovered:\n- No Single Source of Truth — The existing Design System file functioned as a shared storage rather than a centralized system.\n- Lack of System Structure & Rules — Without explicit structure and guidance, design decisions relied heavily on individual interpretation."},
+      {"step": "02 Defining the System Concept", "content": "Based on the audit findings, I introduced a system-first approach grounded in Atomic Design principles.\n\nThe system was designed to clearly separate:\n- Core Component\n- Composite Component\n- Product-specific implementations\n\nAt this stage, the Design System was named Flex — reflecting a flexible and modular foundation built to support evolving product needs."},
+      {"step": "03 Component Classification & Prioritization", "content": "Rather than building everything at once, I prioritized components that:\n- Were used most frequently across products\n- Had the highest impact on visual consistency\n- Carried the greatest risk if left unstandardized\n\nThis resulted in a focused set of core components that formed the backbone of Flex and guided future expansion."},
+      {"step": "04 Component Construction", "content": "Each core component was built with a consistent standard:\n- Clearly defined anatomy — Each component was broken down into explicit structural parts\n- Explicit interaction states and behaviors\n- Scalable and maintainable variant structures\n- Usage rules and constraints"}
+    ],
+    "deliverables": "- Flex Design System — A centralized and structured design system file that serves as the single source of truth\n- Core Component Library — A curated set of reusable core components\n- Anatomy & Behavior Definition — Clear documentation outlining each component's structure, states, and interaction behavior\n- Design Guidelines",
+    "impact": "Business Impact:\n- Faster design iteration and reduced time-to-market\n- Lower design and engineering rework through standardized components\n- Reduced long-term maintenance cost as the system scaled\n- Improved product consistency, strengthening brand trust\n\nTeam Scalability:\n- Faster onboarding for new designers\n- Shared design language across teams\n- Design quality scaled with team growth instead of degrading\n\nDesign Effectiveness:\n- Designers focused more on problem-solving rather than recreating UI\n- Shorter and more predictable design review cycles\n- Clearer decision-making through well-defined system rules",
+    "takeaways": "- A Design System is a product, not just a component library\n- Atomic Design provides a strong foundation for scalability\n- Lean systems are more sustainable than overly complex ones\n- Consistency is driven by clear rules, not visual similarity alone"
+  },
+  {
+    "slug": "tokopedia-checkout",
+    "title": "Seamless Purchase Flow — Tokopedia",
+    "tags": ["Mobile App iOS/Android", "Product"],
+    "role": "Concept, UI/UX, UX Research, Prototype, Design System",
+    "team": "Product Designer, UX Researcher, UX Writer, Product Managers",
+    "year": "2024–2025",
+    "featured": true,
+    "context": "Since H2 '24, I've led the design for the entire purchase experience—covering the shopping cart, checkout, and order management. Previously handled by a team of four designers, the module was consolidated under my ownership. I'm responsible for shaping end-to-end flows including coupon usage, logistics, and payment—ensuring a seamless and intuitive journey from cart to order.",
+    "background": "Aligning the 2025 vision to signify more on promo affordability (final price after promo, vouchers) and social proofs (user generated content, platform assurance, transactional data) to increase buyer's buying perspective in Tokopedia, we need to improve this aspect on end-to-end UX in buyer facing. The goal is that buyers will be more convinced to make purchase decisions after looking at promo affordability and multiple social proofs in Cart & Checkout.",
+    "problem": "Lack of continuity & transparency — Insufficient valuable promotions, and inconsistency frustrates users. UI optimization needed — Improving current interface, layout, and visual hierarchy of the purchase experience.",
+    "design_goals": "- Improve price transparency throughout checkout\n- Introduce urgency triggers and social proof elements\n- Optimize product list presentation\n- Create a unified visual system with consistent promotion highlighting throughout the checkout flow",
+    "process": [
+      {"step": "01 Problem Discovery", "content": "We used both qualitative and quantitative methods to gather insights and data.\n\nUser's perception:\n- Tokopedia cart & checkout offers a straightforward experience but fails to engage users enough to complete purchases immediately.\n- Tokopedia lacks sufficient valuable promotions that would motivate buyers to engage and make purchases.\n\nUsers' pain points:\n- Users encounter unexpected price differences between the cart and checkout pages due to additional costs like shipping and insurance.\n- Users are frustrated when promotions shown on home and product detail pages disappear after the products are added to the cart.\n\nResearch objective: What are the information that our users need in order to see product they added in their cart that influence their decision to checkout the product."},
+      {"step": "02 Benchmark & Audit", "content": "We benchmarked competitors to study their design patterns especially how they implement promotions, information presentation, and visual styles.\n\nImproving price presentation:\n- Current issue: The cart total amount only shows the final price without any detail information of the calculation.\n- Recommendation: Provide the price calculation for better transparency, this fasten user decision to checkout and reducing bounce rate.\n\nEnhance product list presentation:\n- Current issue: In the above the fold, current design of cart page can only show 3 products–takes up vertical space too much.\n- Recommendation: Restructuring the overall product showcase by showing the most important information."},
+      {"step": "03 Concept & Ideation", "content": "With our goal for the overall purchase flow (cart and checkout) set, we are now breaking down the solutions from concept to implementation.\n\nSense of Affordability: Create a unified visual system with consistent promotion highlighted throughout the checkout flow.\n\nUrgency & social proof information: Introduce urgency triggers and social proof elements designed to drive faster purchase decisions — stock scarcity, social proof.\n\nCoupon upselling: Introduce real-time upsell indicators and progress bars in the cart, along with contextual product suggestions.\n\nProduct list new structure: We optimized the layout by merging key elements, resizing details, and reducing vertical space for a cleaner look."}
+    ],
+    "deliverables": "- Redesigned Cart & Checkout flow\n- New promo widget design with benefit amount highlighting\n- Product list structure optimization\n- Detailed transaction summary with all benefits shown",
+    "impact": "- Improved purchase completion rates through better price transparency\n- Reduced bounce rate at checkout\n- Better user confidence in purchase decisions through social proof and urgency triggers\n- Clearer communication of promotional benefits",
+    "takeaways": "- Continuity of promotional messaging is critical — don't let promotions disappear at checkout\n- Social proof at the right moment drives conversions\n- Price transparency reduces purchase friction significantly"
+  },
+  {
+    "slug": "tokopedia-personalized-homepage",
+    "title": "Personalized Homepage — Tokopedia",
+    "tags": ["Mobile", "Product", "UX Research"],
+    "role": "Product Designer",
+    "year": "2023",
+    "featured": true,
+    "context": "Led the redesign of Tokopedia's homepage to improve personalization and user engagement through data-driven design decisions.",
+    "background": "Users were seeing generic content that didn't reflect their shopping behavior, leading to low engagement with homepage sections.",
+    "problem": "Low engagement with homepage content due to lack of personalization and irrelevant product recommendations.",
+    "design_goals": "- Create a more personalized homepage experience\n- Increase user engagement with homepage sections\n- Improve click-through rates on featured content",
+    "process": [
+      {"step": "01 Research & Audit", "content": "Conducted user interviews and analyzed behavioral data to understand how users interact with the current homepage layout."},
+      {"step": "02 Ideation", "content": "Brainstormed personalization approaches with product and engineering teams to define the personalization framework."},
+      {"step": "03 Prototyping & Testing", "content": "Built prototypes and conducted usability testing to validate personalization concepts with real users."}
+    ],
+    "deliverables": "- Redesigned homepage with personalized sections\n- Personalization framework documentation\n- Design guidelines for future homepage iterations",
+    "impact": "- Increased homepage engagement through relevant content\n- Improved click-through rates on personalized sections",
+    "takeaways": "- Personalization must balance relevance with content diversity\n- Too narrow personalization can create filter bubbles"
+  }
+]
