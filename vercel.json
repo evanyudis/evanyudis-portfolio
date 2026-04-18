@@ -1,7 +1,7 @@
 {
   "framework": "nextjs",
-  "installCommand": "npm install --no-audit --no-fund --prefer-offline",
-  "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
+  "installCommand": "corepack enable && pnpm install",
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
   "outputDirectory": ".next"
 }
