@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================
+   OLLAMA DESIGN SYSTEM — evanyudis-portfolio
+   Grayscale palette, SF Pro Rounded, Pill geometry
+   Zero shadows, Zero chromatic colors
+   ============================================ */
+
+@theme {
+  /* Ollama Grayscale Palette */
+  --color-black: #000000;
+  --color-near-black: #262626;
+  --color-darkest-surface: #090909;
+  --color-white: #ffffff;
+  --color-snow: #fafafa;
+  --color-light-gray: #e5e5e5;
+  --color-stone: #737373;
+  --color-mid-gray: #525252;
+  --color-silver: #a3a3a3;
+  --color-button-dark: #404040;
+  --color-border-light: #d4d4d4;
+
+  /* Typography */
+  --font-display: "SF Pro Rounded", system-ui, -apple-system, sans-serif;
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Border Radius — Binary System */
+  --radius-container: 12px;  /* Cards, panels, code blocks */
+  --radius-pill: 9999px;    /* Buttons, tabs, inputs, tags */
+
+  /* Section Spacing */
+  --spacing-section: 88px;
+  --spacing-section-lg: 112px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ============================================
+   BASE STYLES
+   ============================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* SF Pro Rounded for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.0;
+}
+
+/* Links */
+a {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-stone);
+}
+
+/* Focus ring — blue at 50% opacity only */
+:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-light-gray);
+  color: var(--color-black);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.bg-white { background-color: var(--color-white); }
+.bg-snow { background-color: var(--color-snow); }
+.bg-black { background-color: var(--color-black); }
+.bg-darkest-surface { background-color: var(--color-darkest-surface); }
+.bg-light-gray { background-color: var(--color-light-gray); }
+
+.text-black { color: var(--color-black); }
+.text-near-black { color: var(--color-near-black); }
+.text-white { color: var(--color-white); }
+.text-stone { color: var(--color-stone); }
+.text-mid-gray { color: var(--color-mid-gray); }
+.text-silver { color: var(--color-silver); }
+.text-button-dark { color: var(--color-button-dark); }
+
+.border-light-gray { border-color: var(--color-light-gray); }
+.border-border-light { border-color: var(--color-border-light); }
+.border-black { border-color: var(--color-black); }
+
+.rounded-container { border-radius: var(--radius-container); }
+.rounded-pill { border-radius: var(--radius-pill); }
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+
+/* Section spacing */
+.py-section { padding-top: var(--spacing-section); padding-bottom: var(--spacing-section); }
+.py-section-lg { padding-top: var(--spacing-section-lg); padding-bottom: var(--spacing-section-lg); }
+
+/* Button padding consistency */
+.px-btn { padding-left: 24px; padding-right: 24px; }
+.py-btn { padding-top: 10px; padding-bottom: 10px; }

@@ -1,0 +1,41 @@
+'use client'
+
+import React from 'react'
+
+type ButtonVariant = 'black' | 'gray' | 'white'
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant
+  children: React.ReactNode
+}
+
+const variantClasses = {
+  black: 'bg-black text-white border border-black hover:bg-near-black',
+  gray: 'bg-light-gray text-near-black border border-light-gray hover:bg-border-light',
+  white: 'bg-white text-button-dark border border-border-light hover:bg-snow',
+}
+
+export function Button({
+  variant = 'gray',
+  children,
+  className = '',
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      className={`
+        inline-flex items-center justify-center
+        px-btn py-btn
+        text-base font-normal
+        rounded-pill
+        transition-colors duration-150
+        disabled:opacity-50 disabled:cursor-not-allowed
+        ${variantClasses[variant]}
+        ${className}
+      `}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
