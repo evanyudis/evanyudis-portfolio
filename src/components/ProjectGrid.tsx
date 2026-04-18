@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import { Card } from '@/components/ui/Card'
 import { Tag } from '@/components/ui/Tag'
 import { supabase } from '@/lib/supabase'
@@ -9,28 +12,33 @@ interface Project {
   year: string
 }
 
-async function getFeaturedProjects(): Promise<Project[]> {
-  const { data, error } = await supabase
-    .from('projects')
-    .select('slug, title, tags, year')
-    .eq('featured', true)
-    .order('created_at', { ascending: false })
+export function ProjectGrid() {
+  const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
 
-  if (error || !data) {
-    console.error('Error fetching projects:', error)
-    return []
+  useEffect(() => {
+    async function fetchProjects() {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('slug, title, tags, year')
+        .eq('featured', true)
+        .order('created_at', { ascending: false })
+
+      if (!error && data) {
+        setProjects(data as Project[])
+      }
+      setLoading(false)
+    }
+
+    fetchProjects()
+  }, [])
+
+  if (loading) {
+    return <p className="text-stone">Loading...</p>
   }
 
-  return data as Project[]
-}
-
-export async function ProjectGrid() {
-  const projects = await getFeaturedProjects()
-
   if (projects.length === 0) {
-    return (
-      <p className="text-stone">No projects found.</p>
-    )
+    return <p className="text-stone">No projects found.</p>
   }
 
   return (

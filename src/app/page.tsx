@@ -3,7 +3,7 @@ import { CopyEmailButton } from '@/components/CopyEmailButton'
 import { ProjectGrid } from '@/components/ProjectGrid'
 import { ExperienceList } from '@/components/ExperienceList'
 
-// Force dynamic rendering — Supabase credentials not available at build time
+// Force dynamic rendering — Supabase fetches at runtime
 export const dynamic = 'force-dynamic'
 
 export default function HomePage() {

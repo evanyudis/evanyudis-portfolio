@@ -53,10 +53,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
-// ISR — revalidate every 60 seconds
-export const revalidate = 60
-
-// Force dynamic rendering — Supabase credentials not available at build time
+// Force dynamic rendering
 export const dynamic = 'force-dynamic'
 
 export default async function ProjectPage({ params }: PageProps) {
