@@ -61,5 +61,27 @@
     "deliverables": "- Redesigned homepage with personalized sections\n- Personalization framework documentation\n- Design guidelines for future homepage iterations",
     "impact": "- Increased homepage engagement through relevant content\n- Improved click-through rates on personalized sections",
     "takeaways": "- Personalization must balance relevance with content diversity\n- Too narrow personalization can create filter bubbles"
+  },
+  {
+    "slug": "astro-groceries",
+    "title": "Building Groceries Shopping — ASTRO",
+    "tags": ["Mobile App", "Product", "Design System"],
+    "role": "Freelance Product Designer",
+    "team": "Freelance (Solo)",
+    "year": "2021",
+    "featured": true,
+    "context": "ASTRO is a grocery delivery app that needed a complete design system and end-to-end buyer journey before launch. As the sole freelance designer, I was brought in to build the design foundation from zero — covering component library, documentation, and the full user flow from onboarding to order completion.",
+    "background": "ASTRO was launching in the competitive quick commerce space, competing against established players. Unlike typical bootstrap startups, they had solid funding but no in-house design capability. They needed someone to establish the entire design foundation quickly — without sacrificing quality or scalability.",
+    "problem": "Launch timeline was tight and there was no existing design infrastructure. The team needed a complete, scalable design system and a proven buyer journey that could support rapid iteration post-launch.",
+    "design_goals": "- Build a complete design system from zero\n- Design an intuitive end-to-end buyer journey\n- Create a scalable foundation for future product expansion\n- Deliver clear documentation for the engineering team",
+    "process": [
+      {"step": "01 Discovery & Research", "content": "Conducted competitive analysis of existing grocery delivery apps (GoMart, Sayurbox, etc.) to understand common patterns and identify differentiation opportunities. Mapped the core buyer journey stages and defined the minimum viable product scope."},
+      {"step": "02 Design System Foundation", "content": "Built the design system from the ground up — design tokens, core components, and interaction patterns. Focused on creating a flexible, scalable foundation rather than hardcoding specific UI decisions. Documented component usage rules for engineering handoff."},
+      {"step": "03 Buyer Journey Mapping", "content": "Designed the end-to-end user flow: onboarding, product discovery, cart management, checkout, order tracking, and post-delivery. Prioritized clarity and speed — grocery users are task-focused and won't tolerate friction."},
+      {"step": "04 Prototype & Validation", "content": "Built interactive prototypes for the core purchase flow. Conducted informal usability testing with potential users to validate the flow before finalizing designs for engineering handoff."}
+    ],
+    "deliverables": "- Complete design system (tokens, components, documentation)\n- End-to-end buyer journey wireframes and high-fidelity screens\n- Prototype for core purchase flow\n- Design handoff documentation for engineering team",
+    "impact": "- Enabled successful app launch within the target timeline\n- Provided scalable design foundation for post-launch iteration\n- Clear component library reduced design-engineering miscommunication",
+    "takeaways": "- Starting with a design system before product complexity grows saves significant rework later\n- Freelance engagements require clear scope management — build for launch, not for the ideal system\n- Buyer journey clarity matters more than feature richness in grocery apps"
   }
 ]
