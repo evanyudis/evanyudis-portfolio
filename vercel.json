@@ -1,0 +1,3 @@
+{
+  "installCommand": "npm install --force --no-fund --no-audit --loglevel=error"
+}
