@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useRef } from 'react'
 import { Button } from '@/components/ui/Button'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -139,15 +140,7 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="animate-in flex items-center gap-3 flex-wrap">
-            <Button
-              variant="black"
-              onClick={() => {
-                navigator.clipboard.writeText('evanditoevan@gmail.com')
-              }}
-              style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}
-            >
-              Reach Out
-            </Button>
+            <CopyEmailButton variant="hero" />
             <a href="/about">
               <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>About</Button>
             </a>

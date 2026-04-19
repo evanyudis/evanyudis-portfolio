@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 
 export function Navigation() {
   return (
@@ -27,13 +28,7 @@ export function Navigation() {
           >
             Experience
           </Link>
-          <a
-            href="mailto:evanditoevan@gmail.com"
-            className="text-sm font-medium no-underline transition-colors hover:text-[#525252]"
-            style={{ color: '#737373' }}
-          >
-            Contact
-          </a>
+          <CopyEmailButton variant="nav" />
         </div>
       </div>
     </nav>
