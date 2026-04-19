@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { useRef } from 'react'
 import { Button } from '@/components/ui/Button'
-import { CopyEmailButton } from '@/components/CopyEmailButton'
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -15,21 +14,21 @@ export function Hero() {
 
       mm.add('(prefers-reduced-motion: reduce)', () => {
         if (containerRef.current) {
-          gsap.set(containerRef.current.children, { opacity: 1, y: 0 })
+          gsap.set(containerRef.current.querySelectorAll('.animate-in'), { opacity: 1, y: 0 })
         }
         return () => {}
       })
 
       mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const title = containerRef.current?.querySelector('.hero-title')
-        const subtitle = containerRef.current?.querySelector('.hero-subtitle')
-        const actions = containerRef.current?.querySelector('.hero-actions')
-        if (!title || !subtitle || !actions) return
-
         const tl = gsap.timeline()
-        tl.fromTo(title, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
-          .fromTo(subtitle, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }, '-=0.3')
-          .fromTo(actions, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' }, '-=0.2')
+        const children = containerRef.current?.querySelectorAll('.animate-in')
+        if (!children || children.length === 0) return
+
+        tl.fromTo(
+          children,
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.1 }
+        )
         return () => {}
       })
 
@@ -41,23 +40,140 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="w-full py-section-lg px-6"
+      className="w-full min-h-[85vh] px-6 py-section"
+      style={{ backgroundColor: '#fafafa' }}
     >
-      <div className="max-w-screen-xl mx-auto text-center">
-        <h1 className="hero-title text-5xl md:text-6xl font-medium text-black mb-6">
-          26&apos; Portfolio
-        </h1>
-        <p className="hero-subtitle text-lg md:text-xl text-stone max-w-2xl mx-auto mb-8 leading-relaxed">
-          Hey, I&apos;m Evan a sr. product designer at Kredivo based in Jakarta,
-          Indonesia. I design scalable product experiences with a strong focus on
-          design systems, thoughtful interaction, and high-quality execution across
-          web and mobile.
-        </p>
-        <div className="hero-actions flex items-center justify-center gap-4 flex-wrap">
-          <a href="#work">
-            <Button variant="black">View Work</Button>
-          </a>
-          <CopyEmailButton />
+      <div className="max-w-screen-xl mx-auto">
+        {/* Two-column grid: left content + right rail */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-start">
+
+          {/* LEFT: Name, intro, CTAs */}
+          <div className="flex flex-col items-start">
+            {/* Name */}
+            <h1 className="animate-in text-4xl md:text-5xl font-medium tracking-tight mb-4" style={{ color: '#141414', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
+              Evan Yudistira
+            </h1>
+
+            {/* Intro line — matches jaimec.co H3 style */}
+            <h2 className="animate-in text-xl md:text-2xl font-normal leading-tight mb-4" style={{ color: '#141414', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
+              Sr. Product Designer with 6+ years experience designing scalable products and design systems.
+            </h2>
+
+            {/* Currently at — inline text */}
+            <p className="animate-in text-base mb-2" style={{ color: 'rgba(20,20,20,0.6)' }}>
+              Currently designing at{' '}
+              <a
+                href="https://www.kredivo.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-black transition-colors"
+                style={{ color: '#141414' }}
+              >
+                Kredivo
+              </a>
+            </p>
+
+            {/* Previously */}
+            <p className="animate-in text-base mb-8" style={{ color: 'rgba(20,20,20,0.5)' }}>
+              Previously Tokopedia | TikTok Shop, AdMedika
+            </p>
+
+            {/* CTAs */}
+            <div className="animate-in flex items-center gap-3 flex-wrap">
+              <a href="#work">
+                <Button variant="black">View Work</Button>
+              </a>
+              <a
+                href="mailto:evanditoevan@gmail.com"
+                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-pill border transition-all hover:border-mid-gray"
+                style={{
+                  backgroundColor: 'transparent',
+                  borderColor: '#e5e5e5',
+                  color: '#262626',
+                }}
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT: Profile rail — matches jaimec.co sidebar */}
+          <div className="animate-in hidden lg:block">
+            <div
+              className="rounded-container border p-6"
+              style={{ borderColor: '#e5e5e5', backgroundColor: '#ffffff' }}
+            >
+              {/* Profile label */}
+              <p className="text-xs font-mono text-silver mb-4 tracking-wider uppercase">About</p>
+
+              {/* Role */}
+              <div className="mb-4">
+                <p className="text-sm font-medium" style={{ color: '#262626' }}>Senior Product Designer</p>
+                <p className="text-sm" style={{ color: '#737373' }}>Kredivo Group</p>
+              </div>
+
+              {/* Expertise areas */}
+              <div className="mb-4">
+                <p className="text-xs font-mono text-silver mb-2 tracking-wider uppercase">Expertise</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {['Design Systems', 'Product Design', 'E-commerce', 'Figma'].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 text-xs rounded-pill"
+                      style={{ backgroundColor: '#fafafa', color: '#525252', border: '1px solid #e5e5e5' }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="mb-4">
+                <p className="text-xs font-mono text-silver mb-1 tracking-wider uppercase">Location</p>
+                <p className="text-sm" style={{ color: '#525252' }}>Jakarta, Indonesia</p>
+              </div>
+
+              {/* Availability */}
+              <div className="mb-4">
+                <p className="text-xs font-mono text-silver mb-1 tracking-wider uppercase">Available</p>
+                <p className="text-sm" style={{ color: '#525252' }}>Open to opportunities</p>
+              </div>
+
+              {/* Contact links */}
+              <div className="pt-4 border-t" style={{ borderColor: '#e5e5e5' }}>
+                <p className="text-xs font-mono text-silver mb-2 tracking-wider uppercase">Reach me at</p>
+                <div className="flex flex-col gap-1.5">
+                  <a
+                    href="mailto:evanditoevan@gmail.com"
+                    className="text-sm hover:text-black transition-colors"
+                    style={{ color: '#262626' }}
+                  >
+                    evanditoevan@gmail.com
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/evanyudistira"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm hover:text-black transition-colors"
+                    style={{ color: '#262626' }}
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/evanyudistira"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm hover:text-black transition-colors"
+                    style={{ color: '#262626' }}
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

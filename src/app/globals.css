@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 /* ============================================
+   GEIST FONT IMPORTS
+   ============================================ */
+
+/* ============================================
    OLLAMA DESIGN SYSTEM — evanyudis-portfolio
    Grayscale palette, SF Pro Rounded, Pill geometry
    Zero shadows, Zero chromatic colors
@@ -20,9 +24,9 @@
   --color-button-dark: #404040;
   --color-border-light: #d4d4d4;
 
-  /* Typography */
-  --font-display: "SF Pro Rounded", system-ui, -apple-system, sans-serif;
-  --font-sans: system-ui, -apple-system, sans-serif;
+  /* Typography — Geist */
+  --font-display: var(--font-geist), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-geist), system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Border Radius — Binary System */
