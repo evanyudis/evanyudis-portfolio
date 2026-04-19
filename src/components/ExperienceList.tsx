@@ -33,7 +33,7 @@ export function ExperienceList() {
   return (
     <div className="flex flex-col gap-8">
       {experiences.map((exp, idx) => (
-        <div key={idx} className="border-t border-light-gray pt-8">
+        <div key={idx} className="border-t border-light-gray pt-8 experience-item">
           <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 mb-2">
             <h3 className="text-lg font-normal text-black">
               {exp.role}

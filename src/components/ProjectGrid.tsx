@@ -47,7 +47,7 @@ export function ProjectGrid() {
         <Card
           key={project.slug}
           href={`/projects/${project.slug}`}
-          className="group"
+          className="group project-card"
         >
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags?.map((tag: string) => (
