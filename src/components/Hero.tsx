@@ -49,7 +49,7 @@ export function Hero() {
           {/* Name */}
           <h1 className="animate-in mb-3" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '28px',
+            fontSize: '24px',
             fontWeight: 500,
             color: '#141414',
             letterSpacing: '0px',
@@ -96,7 +96,7 @@ export function Hero() {
               href="https://www.kredivo.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-company-link inline-flex items-center gap-1.5"
+              className="hero-company-link current inline-flex items-center gap-1.5"
               style={{ color: '#006ad4', fontWeight: 500 }}
             >
               <img
@@ -123,7 +123,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ fontWeight: 500 }}
               >
                 ByteDance
               </a>
@@ -142,7 +142,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ fontWeight: 500 }}
               >
                 Tokopedia
               </a>
@@ -161,7 +161,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ fontWeight: 500 }}
               >
                 Astro
               </a>

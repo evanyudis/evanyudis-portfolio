@@ -91,13 +91,21 @@ a:hover {
    Blue (#006ad4) with underline on hover
    ============================================ */
 .hero-company-link {
-  color: #006ad4;
+  color: #737373;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .hero-company-link:hover {
   color: #141414;
+}
+
+.hero-company-link.current {
+  color: #006ad4;
+}
+
+.hero-company-link.current:hover {
+  color: #006ad4;
 }
 
 /* ============================================
