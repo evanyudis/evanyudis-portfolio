@@ -45,22 +45,22 @@ export function Hero() {
     >
       <div className="max-w-screen-xl mx-auto">
         {/* Two-column grid: left content + right rail */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-12 lg:gap-16 items-start">
 
-          {/* LEFT: Name, intro, CTAs */}
+          {/* LEFT: Name, intro, CTAs — jaimec.co style */}
           <div className="flex flex-col items-start">
-            {/* Name */}
-            <h1 className="animate-in text-4xl md:text-5xl font-medium tracking-tight mb-4" style={{ color: '#141414', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
+            {/* Name — H3 level (18px), matching jaimec.co */}
+            <h3 className="animate-in text-lg font-medium mb-3" style={{ color: '#141414', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
               Evan Yudistira
-            </h1>
+            </h3>
 
-            {/* Intro line — matches jaimec.co H3 style */}
-            <h2 className="animate-in text-xl md:text-2xl font-normal leading-tight mb-4" style={{ color: '#141414', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
+            {/* Intro — same H3 level, lighter weight */}
+            <h3 className="animate-in text-lg font-normal mb-3" style={{ color: 'rgba(20,20,20,0.65)', fontFamily: 'var(--font-geist), system-ui, -apple-system, sans-serif' }}>
               Sr. Product Designer with 6+ years experience designing scalable products and design systems.
-            </h2>
+            </h3>
 
-            {/* Currently at — inline text */}
-            <p className="animate-in text-base mb-2" style={{ color: 'rgba(20,20,20,0.6)' }}>
+            {/* Currently at — inline text, no heading */}
+            <p className="animate-in text-base mb-1" style={{ color: 'rgba(20,20,20,0.5)' }}>
               Currently designing at{' '}
               <a
                 href="https://www.kredivo.id"
@@ -73,8 +73,7 @@ export function Hero() {
               </a>
             </p>
 
-            {/* Previously */}
-            <p className="animate-in text-base mb-8" style={{ color: 'rgba(20,20,20,0.5)' }}>
+            <p className="animate-in text-base mb-8" style={{ color: 'rgba(20,20,20,0.45)' }}>
               Previously Tokopedia | TikTok Shop, AdMedika
             </p>
 
@@ -97,7 +96,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* RIGHT: Profile rail — matches jaimec.co sidebar */}
+          {/* RIGHT: Profile rail — minimal, matching Ollama aesthetic */}
           <div className="animate-in hidden lg:block">
             <div
               className="rounded-container border p-6"
