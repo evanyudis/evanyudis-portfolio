@@ -92,13 +92,7 @@ export function Hero() {
             lineHeight: '1.4'
           }}>
             <span>Currently at</span>
-            <a
-              href="https://www.kredivo.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-company-link current inline-flex items-center gap-1.5"
-              style={{ color: '#006ad4', fontWeight: 500 }}
-            >
+            <span className="hero-company-item">
               <img
                 src="/company-logos/kredivo.png"
                 alt="Kredivo"
@@ -106,11 +100,19 @@ export function Hero() {
                 height={16}
                 className="w-4 h-4 object-contain"
               />
-              Kredivo
-            </a>
+              <a
+                href="https://www.kredivo.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-company-link"
+                style={{ color: '#006ad4', fontWeight: 500 }}
+              >
+                Kredivo
+              </a>
+            </span>
             {', '}
             previously at{' '}
-            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+            <span className="hero-company-item">
               <img
                 src="/company-logos/bytedance.png"
                 alt="ByteDance"
@@ -123,13 +125,13 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 500 }}
               >
                 ByteDance
               </a>
             </span>
             {', '}
-            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+            <span className="hero-company-item">
               <img
                 src="/company-logos/tokopedia.png"
                 alt="Tokopedia"
@@ -142,13 +144,13 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 500 }}
               >
                 Tokopedia
               </a>
             </span>
             {' and '}
-            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+            <span className="hero-company-item">
               <img
                 src="/company-logos/astro.png"
                 alt="Astro"
@@ -161,7 +163,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 500 }}
               >
                 Astro
               </a>
