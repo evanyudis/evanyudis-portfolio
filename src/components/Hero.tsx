@@ -59,7 +59,7 @@ export function Hero() {
           </h1>
 
           {/* Intro tagline */}
-          <p className="animate-in mb-4" style={{
+          <p className="animate-in mb-4 leading-relaxed" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
             fontWeight: 450,
@@ -72,9 +72,7 @@ export function Hero() {
               <img
                 src="/company-logos/kredivo.png"
                 alt="Kredivo"
-                width={16}
-                height={16}
-                className="w-4 h-4 object-contain"
+                className="inline-block w-auto h-[1em]"
               />
               <a
                 href="https://www.kredivo.id"
@@ -89,11 +87,9 @@ export function Hero() {
             , previously at{' '}
             <span className="hero-company-item">
               <img
-                src="/company-logos/bytedance.png"
-                alt="ByteDance"
-                width={16}
-                height={16}
-                className="w-4 h-4 object-contain"
+                src="/company-logos/bytedance.svg"
+                alt="Bytedance"
+                className="inline-block w-auto h-[1em]"
               />
               <a
                 href="https://www.bytedance.com"
@@ -110,9 +106,7 @@ export function Hero() {
               <img
                 src="/company-logos/tokopedia.png"
                 alt="Tokopedia"
-                width={16}
-                height={16}
-                className="w-4 h-4 object-contain"
+                className="inline-block w-auto h-[1em]"
               />
               <a
                 href="https://www.tokopedia.com"
@@ -129,9 +123,7 @@ export function Hero() {
               <img
                 src="/company-logos/astronauts.png"
                 alt="Astronauts"
-                width={16}
-                height={16}
-                className="w-4 h-4 object-contain"
+                className="inline-block w-auto h-[1em]"
               />
               <a
                 href="https://www.astronauts.id"
@@ -147,23 +139,15 @@ export function Hero() {
 
           {/* CTAs */}
           <div className="animate-in flex items-center gap-3 flex-wrap">
-            <a href="#work">
-              <Button variant="black" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>View Work</Button>
-            </a>
-            <button
+            <Button
+              variant="black"
               onClick={() => {
                 navigator.clipboard.writeText('evanditoevan@gmail.com')
               }}
-              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-pill border transition-all hover:border-[#525252]"
-              style={{
-                backgroundColor: 'transparent',
-                borderColor: '#e5e5e5',
-                color: '#262626',
-                fontFamily: 'var(--font-geist), system-ui, sans-serif'
-              }}
+              style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}
             >
               Reach Out
-            </button>
+            </Button>
             <a href="/about">
               <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>About</Button>
             </a>
