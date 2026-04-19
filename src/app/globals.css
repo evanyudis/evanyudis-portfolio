@@ -93,12 +93,11 @@ a:hover {
 .hero-company-link {
   color: #006ad4;
   text-decoration: none;
-  transition: none;
+  transition: color 0.15s ease;
 }
 
 .hero-company-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  color: #141414;
 }
 
 /* ============================================
