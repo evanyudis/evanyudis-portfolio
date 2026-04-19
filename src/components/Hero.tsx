@@ -47,7 +47,7 @@ export function Hero() {
         <div className="max-w-[640px]">
 
           {/* Name */}
-          <h1 className="animate-in mb-3" style={{
+          <h1 className="animate-in mb-2" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '24px',
             fontWeight: 500,
@@ -58,7 +58,7 @@ export function Hero() {
             Evan Yudistira
           </h1>
 
-          {/* Role */}
+          {/* Intro tagline */}
           <p className="animate-in mb-4" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
@@ -67,31 +67,7 @@ export function Hero() {
             letterSpacing: '0px',
             lineHeight: '1.4'
           }}>
-            Sr. Product Designer
-          </p>
-
-          {/* Intro tagline */}
-          <p className="animate-in mb-2 leading-relaxed" style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '16px',
-            fontWeight: 450,
-            color: 'rgba(20,20,20,0.5)',
-            letterSpacing: '0px',
-            lineHeight: '1.4'
-          }}>
-            Building design system before it was cool.
-          </p>
-
-          {/* Currently at */}
-          <p className="animate-in mb-8 flex flex-wrap items-center gap-x-2 gap-y-1" style={{
-            fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '16px',
-            fontWeight: 450,
-            color: '#141414',
-            letterSpacing: '0px',
-            lineHeight: '1.4'
-          }}>
-            <span>Currently at</span>
+            7+ years designing product across industries, currently at{' '}
             <span className="hero-company-item">
               <img
                 src="/company-logos/kredivo.png"
@@ -105,13 +81,12 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#006ad4', fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 500 }}
               >
                 Kredivo
               </a>
             </span>
-            {', '}
-            previously at{' '}
+            , previously at{' '}
             <span className="hero-company-item">
               <img
                 src="/company-logos/bytedance.png"
@@ -127,10 +102,10 @@ export function Hero() {
                 className="hero-company-link"
                 style={{ color: '#737373', fontWeight: 500 }}
               >
-                ByteDance
+                Bytedance
               </a>
             </span>
-            {', '}
+            ,{' '}
             <span className="hero-company-item">
               <img
                 src="/company-logos/tokopedia.png"
@@ -149,7 +124,7 @@ export function Hero() {
                 Tokopedia
               </a>
             </span>
-            {' and '}
+            , and{' '}
             <span className="hero-company-item">
               <img
                 src="/company-logos/astro.png"
