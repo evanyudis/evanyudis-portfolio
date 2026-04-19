@@ -5,7 +5,7 @@ import { ExperienceList } from '@/components/ExperienceList'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-white pb-24">
       {/* Hero */}
       <Hero />
 

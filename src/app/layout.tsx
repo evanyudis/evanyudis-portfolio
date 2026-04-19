@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Inter } from 'next/font/google'
-import { Navigation } from '@/components/Navigation'
+import { FloatingNav } from '@/components/FloatingNav'
 import './globals.css'
 
 const geistSans = Geist({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${inter.variable} font-sans bg-white text-black antialiased`}>
-        <Navigation />
+        <FloatingNav />
         <main>{children}</main>
       </body>
     </html>
