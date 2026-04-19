@@ -27,9 +27,9 @@ export function Hero() {
         if (!title || !subtitle || !actions) return
 
         const tl = gsap.timeline()
-        tl.fromTo(title, { opacity: 0, y: 32 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' })
-          .fromTo(subtitle, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.4')
-          .fromTo(actions, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+        tl.fromTo(title, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+          .fromTo(subtitle, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }, '-=0.3')
+          .fromTo(actions, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' }, '-=0.2')
         return () => {}
       })
 

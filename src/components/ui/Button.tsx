@@ -28,8 +28,9 @@ export function Button({
         px-btn py-btn
         text-base font-normal
         rounded-pill
-        transition-colors duration-150
+        transition-[background-color,color,border-color] duration-160 ease-out
         disabled:opacity-50 disabled:cursor-not-allowed
+        active:scale-[0.97]
         ${variantClasses[variant]}
         ${className}
       `}

@@ -48,9 +48,9 @@ export function ScrollReveal({
             {
               opacity: 1,
               y: 0,
-              duration: 0.6,
-              ease: 'power2.out',
-              stagger: 0.1,
+              duration: 0.5,
+              ease: 'power3.out',
+              stagger: 0.08,
               delay,
               scrollTrigger: {
                 trigger: containerRef.current,
@@ -67,8 +67,8 @@ export function ScrollReveal({
             {
               opacity: 1,
               y: 0,
-              duration: 0.6,
-              ease: 'power2.out',
+              duration: 0.5,
+              ease: 'power3.out',
               delay,
               scrollTrigger: {
                 trigger: containerRef.current,

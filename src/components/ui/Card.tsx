@@ -12,7 +12,8 @@ export function Card({ children, className = '', href }: CardProps) {
     bg-white border border-light-gray rounded-container
     p-6 md:p-8
     no-underline
-    transition-colors duration-150
+    transition-[border-color] duration-160 ease-out
+    hover:border-mid-gray
   `
 
   if (href) {
