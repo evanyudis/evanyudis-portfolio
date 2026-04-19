@@ -24,9 +24,10 @@
   --color-button-dark: #404040;
   --color-border-light: #d4d4d4;
 
-  /* Typography — Geist */
+  /* Typography — Geist + Inter */
   --font-display: var(--font-geist), system-ui, -apple-system, sans-serif;
   --font-sans: var(--font-geist), system-ui, -apple-system, sans-serif;
+  --font-inter: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Border Radius — Binary System */
@@ -83,6 +84,21 @@ a:hover {
 ::selection {
   background-color: var(--color-light-gray);
   color: var(--color-black);
+}
+
+/* ============================================
+   HERO COMPANY LINKS — jaimec.co style
+   Blue (#006ad4) with underline on hover
+   ============================================ */
+.hero-company-link {
+  color: #006ad4;
+  text-decoration: none;
+  transition: none;
+}
+
+.hero-company-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ============================================

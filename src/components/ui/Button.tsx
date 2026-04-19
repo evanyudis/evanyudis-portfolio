@@ -34,6 +34,7 @@ export function Button({
         ${variantClasses[variant]}
         ${className}
       `}
+      style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}
       {...props}
     >
       {children}

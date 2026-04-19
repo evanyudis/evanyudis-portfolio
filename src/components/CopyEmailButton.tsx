@@ -9,6 +9,7 @@ export function CopyEmailButton() {
       onClick={() => {
         navigator.clipboard.writeText('evanditoevan@gmail.com')
       }}
+      style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}
     >
       Copy Email
     </Button>

@@ -47,65 +47,148 @@ export function Hero() {
         <div className="max-w-[640px]">
 
           {/* Name */}
-          <h1 className="animate-in text-lg font-medium mb-3" style={{
+          <h1 className="animate-in mb-3" style={{
+            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontSize: '28px',
+            fontWeight: 500,
             color: '#141414',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            letterSpacing: '-0.01em'
+            letterSpacing: '0px',
+            lineHeight: '1.2'
           }}>
             Evan Yudistira
           </h1>
 
           {/* Role */}
-          <p className="animate-in text-lg font-normal mb-4" style={{
-            color: 'rgba(20,20,20,0.65)',
-            fontFamily: 'system-ui, -apple-system, sans-serif'
+          <p className="animate-in mb-4" style={{
+            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontSize: '16px',
+            fontWeight: 450,
+            color: '#737373',
+            letterSpacing: '0px',
+            lineHeight: '1.4'
           }}>
             Sr. Product Designer
           </p>
 
           {/* Intro tagline */}
-          <p className="animate-in text-base mb-2 leading-relaxed" style={{
+          <p className="animate-in mb-2 leading-relaxed" style={{
+            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontSize: '16px',
+            fontWeight: 450,
             color: 'rgba(20,20,20,0.5)',
-            fontFamily: 'system-ui, -apple-system, sans-serif'
+            letterSpacing: '0px',
+            lineHeight: '1.4'
           }}>
             Building design system before it was cool.
           </p>
 
           {/* Currently at */}
-          <p className="animate-in text-base mb-8" style={{
-            color: 'rgba(20,20,20,0.45)',
-            fontFamily: 'system-ui, -apple-system, sans-serif'
+          <p className="animate-in mb-8 flex flex-wrap items-center gap-x-2 gap-y-1" style={{
+            fontFamily: 'var(--font-geist), system-ui, sans-serif',
+            fontSize: '16px',
+            fontWeight: 450,
+            color: '#141414',
+            letterSpacing: '0px',
+            lineHeight: '1.4'
           }}>
-            Currently at{' '}
+            <span>Currently at</span>
             <a
               href="https://www.kredivo.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-black transition-colors"
-              style={{ color: '#141414' }}
+              className="hero-company-link inline-flex items-center gap-1.5"
+              style={{ color: '#006ad4', fontWeight: 500 }}
             >
+              <img
+                src="/company-logos/kredivo.png"
+                alt="Kredivo"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
               Kredivo
             </a>
             {', '}
             previously at{' '}
-            <span style={{ color: 'rgba(20,20,20,0.5)' }}>ByteDance, Tokopedia, and Astro</span>
+            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+              <img
+                src="/company-logos/bytedance.png"
+                alt="ByteDance"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
+              <a
+                href="https://www.bytedance.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-company-link"
+                style={{ color: '#737373', fontWeight: 500 }}
+              >
+                ByteDance
+              </a>
+            </span>
+            {', '}
+            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+              <img
+                src="/company-logos/tokopedia.png"
+                alt="Tokopedia"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
+              <a
+                href="https://www.tokopedia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-company-link"
+                style={{ color: '#737373', fontWeight: 500 }}
+              >
+                Tokopedia
+              </a>
+            </span>
+            {' and '}
+            <span className="inline-flex items-center gap-1" style={{ color: '#737373' }}>
+              <img
+                src="/company-logos/astro.png"
+                alt="Astro"
+                width={16}
+                height={16}
+                className="w-4 h-4 object-contain"
+              />
+              <a
+                href="https://astro.build"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-company-link"
+                style={{ color: '#737373', fontWeight: 500 }}
+              >
+                Astro
+              </a>
+            </span>
           </p>
 
           {/* CTAs */}
           <div className="animate-in flex items-center gap-3 flex-wrap">
             <a href="#work">
-              <Button variant="black">View Work</Button>
+              <Button variant="black" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>View Work</Button>
             </a>
-            <a
-              href="mailto:evanditoevan@gmail.com"
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText('evanditoevan@gmail.com')
+              }}
               className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-pill border transition-all hover:border-[#525252]"
               style={{
                 backgroundColor: 'transparent',
                 borderColor: '#e5e5e5',
                 color: '#262626',
+                fontFamily: 'var(--font-geist), system-ui, sans-serif'
               }}
             >
-              Get in touch
+              Reach Out
+            </button>
+            <a href="/about">
+              <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>About</Button>
             </a>
           </div>
 
