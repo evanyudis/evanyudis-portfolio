@@ -127,20 +127,20 @@ export function Hero() {
             , and{' '}
             <span className="hero-company-item">
               <img
-                src="/company-logos/astro.png"
-                alt="Astro"
+                src="/company-logos/astronauts.png"
+                alt="Astronauts"
                 width={16}
                 height={16}
                 className="w-4 h-4 object-contain"
               />
               <a
-                href="https://astro.build"
+                href="https://www.astronauts.id"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
                 style={{ color: '#737373', fontWeight: 500 }}
               >
-                Astro
+                Astronauts
               </a>
             </span>
           </p>
