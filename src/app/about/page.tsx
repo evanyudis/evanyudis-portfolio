@@ -95,12 +95,12 @@ export default function AboutPage() {
                       src={tool.icon}
                       alt={tool.name}
                       style={{
-                        width: '28px',
-                        height: '28px',
+                        width: '32px',
+                        height: '32px',
                         objectFit: 'contain',
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
                         borderRadius: '6px',
-                        padding: '2px',
+                        padding: '4px',
                       }}
                     />
                   </div>
