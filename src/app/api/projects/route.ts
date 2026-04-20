@@ -15,8 +15,7 @@ export async function GET() {
   )
 
   if (!res.ok) {
-    const text = await res.text()
-    return NextResponse.json({ error: text, status: res.status, url: SUPABASE_URL }, { status: res.status })
+    return NextResponse.json([], { status: res.status })
   }
 
   const data = await res.json()

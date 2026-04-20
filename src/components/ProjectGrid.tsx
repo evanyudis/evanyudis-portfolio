@@ -7,7 +7,6 @@ interface Project {
   title: string
   tags: string[]
   year: string
-  cover_image?: string
   role?: string
   team?: string
   context?: string
@@ -58,21 +57,6 @@ export function ProjectGrid() {
           href={`/projects/${project.slug}`}
           className="project-item group block bg-white border border-light-gray rounded-container overflow-hidden transition-all duration-200 hover:border-mid-gray"
         >
-          {/* Visual — Full width cover image */}
-          <div className="aspect-[16/9] bg-light-gray overflow-hidden">
-            {project.cover_image ? (
-              <img
-                src={project.cover_image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-stone text-sm">{project.title}</span>
-              </div>
-            )}
-          </div>
-
           {/* Content */}
           <div className="p-6">
             {/* Title row: project name + role */}
