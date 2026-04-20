@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Geist, Inter } from 'next/font/google'
 import { FloatingNav } from '@/components/FloatingNav'
+import { inject } from '@vercel/analytics'
 import './globals.css'
+
+inject({ mode: process.env.NODE_ENV === 'production' ? 'production' : 'development' })
 
 const geistSans = Geist({
   subsets: ['latin'],
