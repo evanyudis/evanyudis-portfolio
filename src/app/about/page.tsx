@@ -38,7 +38,7 @@ export default function AboutPage() {
   return (
     <section className="w-full min-h-[85vh] px-6 py-section" style={{ backgroundColor: '#fafafa' }}>
       <div className="max-w-2xl mx-auto">
-        <div>
+        <div className="max-w-[640px] mx-auto">
 
           {/* Bio */}
           <p style={{

@@ -45,7 +45,7 @@ export function Hero() {
       style={{ backgroundColor: '#fafafa' }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="max-w-[640px] text-center md:text-left hero-content">
+        <div className="max-w-[640px] mx-auto text-center md:text-left hero-content">
 
           {/* Name */}
           <h1 className="animate-in hero-name mb-4" style={{
