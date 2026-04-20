@@ -13,7 +13,7 @@ export function FloatingNav() {
         style={{
           backdropFilter: 'blur(24px)',
           WebkitBackdropFilter: 'blur(24px)',
-          backgroundColor: 'rgba(255, 255, 255, 0.20)',
+          backgroundColor: 'rgba(255, 255, 255, 0.30)',
           border: '1px solid rgba(255, 255, 255, 0.30)',
           boxShadow: `
             inset 0 1px 0 rgba(255, 255, 255, 0.60),
@@ -31,7 +31,10 @@ export function FloatingNav() {
           <Link
             href="/"
             className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
-            style={{ color: pathname === '/' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.60)' }}
+            style={{
+              color: pathname === '/' ? '#141414' : 'rgba(115, 115, 115, 1)',
+              backgroundColor: pathname === '/' ? 'rgba(255, 255, 255, 0.70)' : 'transparent',
+            }}
           >
             Index
           </Link>
@@ -40,7 +43,10 @@ export function FloatingNav() {
           <Link
             href="/about"
             className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
-            style={{ color: pathname === '/about' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.60)' }}
+            style={{
+              color: pathname === '/about' ? '#141414' : 'rgba(115, 115, 115, 1)',
+              backgroundColor: pathname === '/about' ? 'rgba(255, 255, 255, 0.70)' : 'transparent',
+            }}
           >
             About
           </Link>
