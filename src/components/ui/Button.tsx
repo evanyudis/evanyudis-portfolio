@@ -26,7 +26,7 @@ export function Button({
       className={`
         inline-flex items-center justify-center
         px-btn py-btn
-        text-base font-normal
+        text-base
         rounded-pill
         transition-[background-color,color,border-color] duration-160 ease-out
         disabled:opacity-50 disabled:cursor-not-allowed

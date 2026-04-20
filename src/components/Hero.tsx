@@ -45,12 +45,12 @@ export function Hero() {
       style={{ backgroundColor: '#fafafa' }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="max-w-[640px]">
+        <div className="max-w-[640px] text-center md:text-left">
 
           {/* Name */}
           <h1 className="animate-in mb-2" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '24px',
+            fontSize: '32px',
             fontWeight: 500,
             color: '#141414',
             letterSpacing: '0px',
@@ -142,7 +142,7 @@ export function Hero() {
           <div className="animate-in flex items-center gap-3 flex-wrap">
             <CopyEmailButton variant="hero" />
             <a href="/about">
-              <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>About</Button>
+              <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500 }}>About</Button>
             </a>
           </div>
 
