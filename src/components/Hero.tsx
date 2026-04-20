@@ -133,7 +133,7 @@ export function Hero() {
                 className="hero-company-link"
                 style={{ color: '#737373', fontWeight: 400 }}
               >
-                ASTRNTS
+                ASTRO
               </a>
             </span>
           </p>
