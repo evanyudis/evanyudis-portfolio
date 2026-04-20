@@ -87,6 +87,23 @@ a:hover {
 }
 
 /* ============================================
+   HERO CONTAINER — dimming on company hover
+   ============================================ */
+.hero-content {
+  transition: opacity 0.2s ease;
+}
+
+/* When any company is hovered, dim everything except hovered item */
+.hero-content:has(.hero-company-item:hover) .hero-company-item:not(:hover) {
+  opacity: 0.4;
+}
+
+.hero-content:has(.hero-company-item:hover) .hero-name,
+.hero-content:has(.hero-company-item:hover) .hero-description {
+  opacity: 0.4;
+}
+
+/* ============================================
    HERO COMPANY LINKS — jaimec.co style
    Blue (#006ad4) with underline on hover
    ============================================ */
@@ -106,7 +123,7 @@ a:hover {
   gap: 4px;
   padding: 2px 4px;
   border-radius: 6px;
-  transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.15s ease, opacity 0.15s ease;
   /* Level 0: Flat — no shadow by default */
   box-shadow: none;
 }

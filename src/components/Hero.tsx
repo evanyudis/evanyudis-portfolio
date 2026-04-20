@@ -45,22 +45,22 @@ export function Hero() {
       style={{ backgroundColor: '#fafafa' }}
     >
       <div className="max-w-screen-xl mx-auto">
-        <div className="max-w-[640px] text-center md:text-left">
+        <div className="max-w-[640px] text-center md:text-left hero-content">
 
           {/* Name */}
-          <h1 className="animate-in mb-2" style={{
+          <h1 className="animate-in hero-name mb-2" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
-            fontSize: '32px',
+            fontSize: '16px',
             fontWeight: 500,
             color: '#141414',
             letterSpacing: '0px',
-            lineHeight: '1.2'
+            lineHeight: '1.4'
           }}>
             Evan Yudistira
           </h1>
 
           {/* Intro tagline */}
-          <p className="animate-in mb-4 leading-relaxed" style={{
+          <p className="animate-in hero-description mb-4 leading-relaxed" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
             fontWeight: 400,
@@ -139,7 +139,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="animate-in flex items-center gap-3 flex-wrap">
+          <div className="animate-in flex md:justify-start justify-center items-center gap-3 flex-wrap">
             <CopyEmailButton variant="hero" />
             <a href="/about">
               <Button variant="white" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500 }}>About</Button>
