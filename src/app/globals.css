@@ -173,6 +173,25 @@ a:hover {
   font-size: 10px;
   color: #737373;
 }
+
+/* ============================================
+   STACK ICONS — dock-style squares
+   ============================================ */
+.stack-icon {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.stack-icon:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
 .bg-darkest-surface { background-color: var(--color-darkest-surface); }
 .bg-light-gray { background-color: var(--color-light-gray); }
 

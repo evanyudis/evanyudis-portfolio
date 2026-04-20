@@ -5,16 +5,6 @@ export const metadata: Metadata = {
   description: 'Senior Product Designer with 7+ years of experience in design systems, ecommerce, and product design.',
 }
 
-const toolkit = [
-  'Figma',
-  'React',
-  'Next.js',
-  'TypeScript',
-  'Tailwind CSS',
-  'Supabase',
-  'GSAP',
-]
-
 const experience = [
   {
     company: 'Kredivo',
@@ -63,7 +53,7 @@ export default function AboutPage() {
             Hey, I&apos;m Evan, a product designer with 7+ years of experience. Currently part of the design team at Kredivo. I&apos;ve specialized in design systems, fintech, and e-commerce — designing experiences that move customers from browsing to buying. In that time I&apos;ve had the opportunity to work with talented product, technology, design, and engineering teams tackling challenging problems.
           </p>
 
-          {/* Toolkit */}
+          {/* Stacks */}
           <div style={{ marginBottom: '48px' }}>
             <h2 style={{
               fontFamily: 'var(--font-geist), system-ui, sans-serif',
@@ -75,23 +65,35 @@ export default function AboutPage() {
               marginBottom: '16px',
               textTransform: 'uppercase',
             }}>
-              Current Toolkit
+              Stacks
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {toolkit.map((tool) => (
-                <span
-                  key={tool}
-                  style={{
-                    fontFamily: 'var(--font-geist), system-ui, sans-serif',
-                    fontSize: '13px',
-                    fontWeight: 400,
-                    color: '#141414',
-                    letterSpacing: '0px',
-                    padding: '4px 0',
-                  }}
+            <div className="flex flex-wrap gap-3">
+              {[
+                { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+                { name: 'Obsidian', icon: 'https://cdn.obsidian.md/images/obsidian-logo.svg' },
+                { name: 'Claude', icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968756.png' },
+                { name: 'Hermes', icon: 'https://raw.githubusercontent.com/nousresearch/hermes-agent/main/assets/banner.png' },
+                { name: 'Vercel', icon: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
+                { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
+                { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+                { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+                { name: 'Dia', icon: 'https://cdn.sanity.io/images/e5fj2khm/production/224e62ee0cc323b1d50fe1407dcab3333e27a33e-480x400.png?w=64&h=64&fit=contain&q=80' },
+              ].map((tool) => (
+                <div
+                  key={tool.name}
+                  className="stack-icon"
+                  title={tool.name}
                 >
-                  {tool}
-                </span>
+                  <img
+                    src={tool.icon}
+                    alt={tool.name}
+                    style={{
+                      width: '20px',
+                      height: '20px',
+                      objectFit: 'contain',
+                    }}
+                  />
+                </div>
               ))}
             </div>
           </div>
