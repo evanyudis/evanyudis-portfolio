@@ -93,14 +93,14 @@ a:hover {
   transition: opacity 0.2s ease;
 }
 
-/* When any company is hovered, dim everything except hovered item */
-.hero-content:has(.hero-company-item:hover) .hero-company-item:not(:hover) {
+/* When a company is hovered, dim the entire description paragraph */
+.hero-description:has(.hero-company-item:hover) {
   opacity: 0.4;
 }
 
-.hero-content:has(.hero-company-item:hover) .hero-name,
-.hero-content:has(.hero-company-item:hover) .hero-description {
-  opacity: 0.4;
+/* But keep the hovered item fully visible */
+.hero-description .hero-company-item:hover {
+  opacity: 1;
 }
 
 /* ============================================

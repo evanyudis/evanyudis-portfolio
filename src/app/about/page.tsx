@@ -72,19 +72,19 @@ export default function AboutPage() {
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.04)',
                 borderRadius: '12px',
-                padding: '12px 16px',
+                padding: '20px 16px',
                 display: 'inline-flex',
               }}
             >
-              <div className="flex gap-3">
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
                 {[
                   { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-                  { name: 'Obsidian', icon: 'https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/53c7cb96-7407-4a94-8219-60f6f5543fe3.png?w=80&h=80&fit=max&dpr=3&auto=format&q=50' },
-                  { name: 'Claude', icon: 'https://www.stickpng.com/img/icons-logos-emojis/ai-tools/claude-ai-logo' },
+                  { name: 'Obsidian', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg' },
+                  { name: 'Claude', icon: 'https://storage.googleapis.com/cdn.anthropic.com/marketing-assets/ai-logo.svg' },
                   { name: 'Hermes', icon: 'https://raw.githubusercontent.com/nousresearch/hermes-agent/main/assets/banner.png' },
                   { name: 'Vercel', icon: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
                   { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
-                  { name: 'Dia', icon: 'https://cdn.sanity.io/images/e5fj2khm/production/224e62ee0cc323b1d50fe1407dcab3333e27a33e-480x400.png?w=64&h=64&fit=contain&q=80' },
+                  { name: 'Dia', icon: 'https://raw.githubusercontent.com/nousresearch/browser/main/apps/dia/public/logo.png' },
                 ].map((tool) => (
                   <div
                     key={tool.name}
@@ -94,9 +94,12 @@ export default function AboutPage() {
                     <img
                       src={tool.icon}
                       alt={tool.name}
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
                       style={{
-                        width: '32px',
-                        height: '32px',
+                        width: '36px',
+                        height: '36px',
                         objectFit: 'contain',
                         backgroundColor: 'rgba(255, 255, 255, 0.95)',
                         borderRadius: '6px',
