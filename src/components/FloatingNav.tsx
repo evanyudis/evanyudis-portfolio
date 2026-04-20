@@ -18,13 +18,13 @@ export function FloatingNav() {
         }}
       >
         <div
-          className="flex items-center"
+          className="flex items-center gap-1"
           style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif' }}
         >
           {/* Index */}
           <Link
             href="/"
-            className="flex-1 min-w-0 text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             Index
@@ -33,15 +33,15 @@ export function FloatingNav() {
           {/* About */}
           <Link
             href="/about"
-            className="flex-1 min-w-0 text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             About
           </Link>
 
           {/* Reach Out */}
-          <div className="flex-1 min-w-0">
-            <CopyEmailButton variant="nav" className="w-full justify-center" />
+          <div className="w-[96px] flex justify-center">
+            <CopyEmailButton variant="nav" />
           </div>
         </div>
       </div>
