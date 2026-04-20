@@ -72,11 +72,11 @@ export default function AboutPage() {
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.04)',
                 borderRadius: '12px',
-                padding: '16px',
+                padding: '12px 16px',
                 display: 'inline-flex',
               }}
             >
-              <div className="flex flex-wrap gap-3">
+              <div className="flex gap-3">
                 {[
                   { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
                   { name: 'Obsidian', icon: 'https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/53c7cb96-7407-4a94-8219-60f6f5543fe3.png?w=80&h=80&fit=max&dpr=3&auto=format&q=50' },
@@ -84,8 +84,6 @@ export default function AboutPage() {
                   { name: 'Hermes', icon: 'https://raw.githubusercontent.com/nousresearch/hermes-agent/main/assets/banner.png' },
                   { name: 'Vercel', icon: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
                   { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
-                  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-                  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
                   { name: 'Dia', icon: 'https://cdn.sanity.io/images/e5fj2khm/production/224e62ee0cc323b1d50fe1407dcab3333e27a33e-480x400.png?w=64&h=64&fit=contain&q=80' },
                 ].map((tool) => (
                   <div
@@ -97,9 +95,12 @@ export default function AboutPage() {
                       src={tool.icon}
                       alt={tool.name}
                       style={{
-                        width: '20px',
-                        height: '20px',
+                        width: '28px',
+                        height: '28px',
                         objectFit: 'contain',
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        borderRadius: '6px',
+                        padding: '2px',
                       }}
                     />
                   </div>
