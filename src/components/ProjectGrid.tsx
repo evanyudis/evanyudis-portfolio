@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { supabase } from '@/lib/supabase'
+import gsap from 'gsap'
 
 interface Project {
   slug: string
@@ -13,9 +14,44 @@ interface Project {
   role?: string
 }
 
+// Hardcoded project data — descriptions and company logos for now
+// Replace with Supabase fields when schema is updated
+const PROJECT_DETAILS: Record<string, {
+  description: string
+  background: string
+  impact: string
+  companyLogo?: string
+}> = {
+  'flex-design-system': {
+    description: 'Kredivo\'s design system powering 40+ products',
+    background: 'Built a comprehensive design system from the ground up for a leading Indonesian fintech, consolidating 6 fragmented product teams under a single component library.',
+    impact: 'Reduced design-to-dev handoff time by 60% and achieved consistent cross-team UI implementation across all products.',
+    companyLogo: '/company-logos/kredivo.png',
+  },
+  'gainz': {
+    description: 'Fitness tracking app with workout logging',
+    background: 'Vibecoded a gym companion app focused on progressive overload tracking, body composition logging, and workout program management.',
+    impact: 'Replaced spreadsheet tracking with a dedicated mobile-first app, enabling faster workout logging during gym sessions.',
+    companyLogo: '/company-logos/bytedance.svg',
+  },
+  'feedbuddy': {
+    description: 'Breastfeeding & diaper tracker for new parents',
+    background: 'Built a PWA to help new parents track feeding sessions, pumping output, and diaper changes for their newborn.',
+    impact: 'Replaced scattered notes with a unified tracking app, reducing mental load during the exhausting newborn phase.',
+    companyLogo: '/company-logos/tokopedia.png',
+  },
+  'bumpbuddy': {
+    description: 'Pregnancy companion app for tracking maternal health',
+    background: 'Designed and built a pregnancy tracking app for a spouse\'s journey, with contraction timer, milestone logging, and provider communication features.',
+    impact: 'Provided a dedicated tool for tracking high-risk pregnancy progress and coordinating with medical providers.',
+    companyLogo: '/company-logos/astronauts.png',
+  },
+}
+
 export function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     async function fetchProjects() {
@@ -34,9 +70,23 @@ export function ProjectGrid() {
     fetchProjects()
   }, [])
 
+  useEffect(() => {
+    if (loading || projects.length === 0 || !containerRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.project-item',
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.08 }
+      )
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [loading, projects])
+
   if (loading) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="flex flex-col gap-6">
         {[1, 2].map((i) => (
           <div
             key={i}
@@ -53,60 +103,106 @@ export function ProjectGrid() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {projects.map((project) => (
-        <a
-          key={project.slug}
-          href={`/projects/${project.slug}`}
-          className="project-card group block bg-white border border-light-gray rounded-container overflow-hidden transition-all duration-160 hover:border-mid-gray"
-        >
-          {/* Cover Image */}
-          <div className="aspect-[16/10] bg-light-gray overflow-hidden">
-            {project.cover_image ? (
-              <img
-                src={project.cover_image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-stone text-sm">{project.title}</span>
-              </div>
-            )}
-          </div>
+    <div ref={containerRef} className="flex flex-col gap-6">
+      {projects.map((project) => {
+        const details = PROJECT_DETAILS[project.slug]
+        return (
+          <a
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            className="project-item group block bg-white border border-light-gray rounded-container overflow-hidden transition-all duration-200 hover:border-mid-gray"
+          >
+            {/* Visual — Full width cover image */}
+            <div className="aspect-[16/9] bg-light-gray overflow-hidden">
+              {project.cover_image ? (
+                <img
+                  src={project.cover_image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <span className="text-stone text-sm">{project.title}</span>
+                </div>
+              )}
+            </div>
 
-          {/* Card Content */}
-          <div className="p-6">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              {project.tags?.slice(0, 3).map((tag: string) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-0.5 rounded-pill bg-light-gray text-stone"
+            {/* Content */}
+            <div className="p-6">
+              {/* Title row: project name + company logo + company name */}
+              <div className="flex items-center justify-between mb-4">
+                <h3
+                  className="text-2xl text-black transition-colors duration-150 group-hover:text-stone"
+                  style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400, letterSpacing: '-0.02em' }}
                 >
-                  {tag}
+                  {project.title}
+                </h3>
+                {details?.companyLogo && (
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={details.companyLogo}
+                      alt={project.company}
+                      className="h-5 w-auto object-contain"
+                      style={{ opacity: 0.7 }}
+                    />
+                    {project.company && (
+                      <span
+                        className="text-sm text-stone"
+                        style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}
+                      >
+                        {project.company}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Description */}
+              <p
+                className="text-base text-stone mb-4 leading-relaxed"
+                style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400 }}
+              >
+                {details?.description || project.role}
+              </p>
+
+              {/* Background + Impact */}
+              {details && (
+                <div className="mb-6 space-y-2">
+                  <p
+                    className="text-sm text-stone leading-relaxed"
+                    style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400 }}
+                  >
+                    {details.background}
+                  </p>
+                  <p
+                    className="text-sm text-stone leading-relaxed"
+                    style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500, color: '#141414' }}
+                  >
+                    {details.impact}
+                  </p>
+                </div>
+              )}
+
+              {/* View Case Study button */}
+              <div>
+                <span
+                  className="inline-flex items-center gap-2 text-sm transition-colors duration-150 group-hover:gap-3"
+                  style={{
+                    fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                    fontWeight: 500,
+                    color: '#737373',
+                  }}
+                >
+                  View Case Study
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-150 group-hover:translate-x-0.5">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
-              ))}
+              </div>
             </div>
-
-            {/* Title */}
-            <h3
-              className="text-xl text-black mb-1 transition-colors duration-150 group-hover:text-stone"
-              style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontWeight: 400 }}
-            >
-              {project.title}
-            </h3>
-
-            {/* Meta */}
-            <div className="flex items-center gap-2 text-sm text-stone">
-              {project.company && <span>{project.company}</span>}
-              {project.company && project.role && <span>·</span>}
-              {project.role && <span>{project.role}</span>}
-              {project.year && <span>· {project.year}</span>}
-            </div>
-          </div>
-        </a>
-      ))}
+          </a>
+        )
+      })}
     </div>
   )
 }

@@ -94,9 +94,6 @@ export default function AboutPage() {
                     <img
                       src={tool.icon}
                       alt={tool.name}
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                      }}
                       style={{
                         width: '36px',
                         height: '36px',
