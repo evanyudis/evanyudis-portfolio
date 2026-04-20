@@ -48,7 +48,7 @@ export function Hero() {
         <div className="max-w-[640px] text-center md:text-left hero-content">
 
           {/* Name */}
-          <h1 className="animate-in hero-name mb-2" style={{
+          <h1 className="animate-in hero-name mb-4" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
             fontWeight: 500,
