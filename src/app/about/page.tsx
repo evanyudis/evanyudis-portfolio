@@ -72,11 +72,11 @@ export default function AboutPage() {
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.04)',
                 borderRadius: '12px',
-                padding: '20px 16px',
+                padding: '12px 16px',
                 display: 'inline-flex',
               }}
             >
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                 {[
                   { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
                   { name: 'Obsidian', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg' },
