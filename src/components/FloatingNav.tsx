@@ -11,11 +11,15 @@ export function FloatingNav() {
       <div
         className="pointer-events-auto rounded-full"
         style={{
-          backdropFilter: 'blur(24px) saturate(200%)',
-          WebkitBackdropFilter: 'blur(24px) saturate(200%)',
-          backgroundColor: 'rgba(255, 255, 255, 0.6)',
-          border: '1px solid rgba(255, 255, 255, 0.5)',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.20)',
+          border: '1px solid rgba(255, 255, 255, 0.30)',
+          boxShadow: `
+            inset 0 1px 0 rgba(255, 255, 255, 0.60),
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            0 2px 8px rgba(0, 0, 0, 0.04)
+          `,
           padding: '4px',
         }}
       >
@@ -26,8 +30,8 @@ export function FloatingNav() {
           {/* Index */}
           <Link
             href="/"
-            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
-            style={{ color: pathname === '/' ? '#141414' : '#737373' }}
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
+            style={{ color: pathname === '/' ? '#141414' : 'rgba(115, 115, 115, 1)' }}
           >
             Index
           </Link>
@@ -35,8 +39,8 @@ export function FloatingNav() {
           {/* About */}
           <Link
             href="/about"
-            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
-            style={{ color: pathname === '/about' ? '#141414' : '#737373' }}
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
+            style={{ color: pathname === '/about' ? '#141414' : 'rgba(115, 115, 115, 1)' }}
           >
             About
           </Link>
