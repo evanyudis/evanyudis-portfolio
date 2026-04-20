@@ -78,13 +78,13 @@ export default function AboutPage() {
             >
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {[
-                  { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-                  { name: 'Obsidian', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg' },
-                  { name: 'Claude', icon: 'https://storage.googleapis.com/cdn.anthropic.com/marketing-assets/ai-logo.svg' },
+                  { name: 'Figma', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/figma.svg' },
+                  { name: 'Obsidian', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/obsidian.svg' },
+                  { name: 'Claude', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/anthropic.svg' },
                   { name: 'Hermes', icon: 'https://raw.githubusercontent.com/nousresearch/hermes-agent/main/assets/banner.png' },
-                  { name: 'Vercel', icon: 'https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png' },
-                  { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
-                  { name: 'Dia', icon: 'https://raw.githubusercontent.com/nousresearch/browser/main/apps/dia/public/logo.png' },
+                  { name: 'Vercel', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg' },
+                  { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/supabase.svg' },
+                  { name: 'Dia', icon: 'https://www.google.com/s2/favicons?domain=diabrowser.com&sz=128' },
                 ].map((tool) => (
                   <div
                     key={tool.name}
