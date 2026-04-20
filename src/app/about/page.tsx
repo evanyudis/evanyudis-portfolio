@@ -98,9 +98,7 @@ export default function AboutPage() {
                         width: '44px',
                         height: '44px',
                         objectFit: 'contain',
-                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
                         borderRadius: '8px',
-                        padding: '6px',
                       }}
                     />
                   </div>

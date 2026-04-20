@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import gsap from 'gsap'
 
 interface Project {
   slug: string
@@ -20,7 +19,6 @@ interface Project {
 export function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     async function fetchProjects() {
@@ -38,20 +36,6 @@ export function ProjectGrid() {
 
     fetchProjects()
   }, [])
-
-  useEffect(() => {
-    if (loading || projects.length === 0 || !containerRef.current) return
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.project-item',
-        { opacity: 0, y: 24 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out', stagger: 0.08 }
-      )
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [loading, projects])
 
   if (loading) {
     return (
@@ -72,7 +56,7 @@ export function ProjectGrid() {
   }
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
       {projects.map((project) => (
         <a
           key={project.slug}
