@@ -37,7 +37,7 @@ const contactLinks = [
 export default function AboutPage() {
   return (
     <section className="w-full min-h-[85vh] px-6 py-section" style={{ backgroundColor: '#fafafa' }}>
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="max-w-2xl mx-auto">
         <div>
 
           {/* Bio */}
