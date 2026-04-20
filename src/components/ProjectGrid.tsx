@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
 
 interface Project {
   slug: string
@@ -16,25 +15,21 @@ interface Project {
   impact?: string
 }
 
+async function fetchProjects(): Promise<Project[]> {
+  const res = await fetch('/api/projects')
+  if (!res.ok) return []
+  return res.json()
+}
+
 export function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function fetchProjects() {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('slug, title, tags, year, cover_image, role, team, context, background, impact')
-        .eq('featured', true)
-        .order('created_at', { ascending: false })
-
-      if (!error && data) {
-        setProjects(data as Project[])
-      }
+    fetchProjects().then((data) => {
+      setProjects(data)
       setLoading(false)
-    }
-
-    fetchProjects()
+    })
   }, [])
 
   if (loading) {
