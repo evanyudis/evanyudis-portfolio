@@ -31,7 +31,7 @@ export function FloatingNav() {
           <Link
             href="/"
             className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
-            style={{ color: pathname === '/' ? '#141414' : 'rgba(115, 115, 115, 1)' }}
+            style={{ color: pathname === '/' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.60)' }}
           >
             Index
           </Link>
@@ -40,7 +40,7 @@ export function FloatingNav() {
           <Link
             href="/about"
             className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-white/10 active:scale-95"
-            style={{ color: pathname === '/about' ? '#141414' : 'rgba(115, 115, 115, 1)' }}
+            style={{ color: pathname === '/about' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.60)' }}
           >
             About
           </Link>
