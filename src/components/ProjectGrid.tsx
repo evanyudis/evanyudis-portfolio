@@ -60,8 +60,8 @@ export function ProjectGrid() {
           <div className="flex flex-row">
             {/* Visual — left side, gray placeholder */}
             <div
-              className="w-[200px] min-w-[200px] bg-[#e5e5e5] flex items-center justify-center"
-              style={{ minHeight: '180px' }}
+              className="w-[180px] min-w-[180px] bg-[#e5e5e5] flex items-center justify-center"
+              style={{ minHeight: '160px' }}
             >
               <span className="text-[#a3a3a3] text-xs uppercase tracking-wider">Project Visual</span>
             </div>
@@ -86,22 +86,15 @@ export function ProjectGrid() {
                   </div>
                 </div>
 
-                {/* Description: context + background (2 sentences) */}
-                <div className="mb-4">
+                {/* Description — two brief sentences */}
+                <div className="mb-0">
                   {project.context && (
                     <p
-                      className="text-sm text-[#525252] mb-2 leading-relaxed"
+                      className="text-sm text-[#525252] leading-relaxed"
                       style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400 }}
                     >
-                      {project.context.length > 120 ? project.context.slice(0, 120) + '...' : project.context}
-                    </p>
-                  )}
-                  {project.background && (
-                    <p
-                      className="text-sm text-[#737373] leading-relaxed"
-                      style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400 }}
-                    >
-                      {project.background.length > 140 ? project.background.slice(0, 140) + '...' : project.background}
+                      {project.context.length > 150 ? project.context.slice(0, 150) + '...' : project.context}
+                      {project.background ? ' ' + project.background.slice(0, 80) + (project.background.length > 80 ? '...' : '') : ''}
                     </p>
                   )}
                 </div>
