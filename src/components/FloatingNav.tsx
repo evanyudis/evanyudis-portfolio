@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 
 export function FloatingNav() {
   return (
@@ -38,11 +37,6 @@ export function FloatingNav() {
           >
             About
           </Link>
-
-          {/* Reach Out */}
-          <div className="w-[96px] flex justify-center">
-            <CopyEmailButton variant="nav" />
-          </div>
         </div>
       </div>
     </nav>
