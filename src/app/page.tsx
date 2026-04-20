@@ -18,7 +18,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-medium text-black mb-12" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
             Work
           </h2>
-          <ScrollReveal stagger selector=".project-card">
+          <ScrollReveal stagger selector=".project-item">
             <ProjectGrid />
           </ScrollReveal>
         </div>
