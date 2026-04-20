@@ -147,6 +147,32 @@ a:hover {
 .bg-white { background-color: var(--color-white); }
 .bg-snow { background-color: var(--color-snow); }
 .bg-black { background-color: var(--color-black); }
+
+/* ============================================
+   ABOUT PAGE — jaimec.co style
+   ============================================ */
+.about-contact-link {
+  font-family: var(--font-geist), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #141414;
+  text-decoration: none;
+  letter-spacing: 0px;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-contact-link:hover {
+  color: #737373;
+}
+
+.about-link-arrow {
+  font-size: 10px;
+  color: #737373;
+}
 .bg-darkest-surface { background-color: var(--color-darkest-surface); }
 .bg-light-gray { background-color: var(--color-light-gray); }
 
