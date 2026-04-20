@@ -13,7 +13,7 @@ export default function AboutPage() {
           <h1 style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '28px',
-            fontWeight: 500,
+            fontWeight: 400,
             color: '#141414',
             letterSpacing: '0px',
             lineHeight: '1.2',
@@ -24,7 +24,7 @@ export default function AboutPage() {
           <p style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
-            fontWeight: 450,
+            fontWeight: 400,
             color: '#141414',
             letterSpacing: '0px',
             lineHeight: '1.6',
@@ -35,7 +35,7 @@ export default function AboutPage() {
           <p style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
-            fontWeight: 450,
+            fontWeight: 400,
             color: '#737373',
             letterSpacing: '0px',
             lineHeight: '1.6',

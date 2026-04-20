@@ -23,7 +23,7 @@ export function FloatingNav() {
           {/* Index */}
           <Link
             href="/"
-            className="w-[96px] text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             Index
@@ -32,7 +32,7 @@ export function FloatingNav() {
           {/* About */}
           <Link
             href="/about"
-            className="w-[96px] text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="w-[96px] text-center px-3 py-1.5 text-sm font-normal no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             About

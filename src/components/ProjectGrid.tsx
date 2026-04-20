@@ -92,7 +92,7 @@ export function ProjectGrid() {
             {/* Title */}
             <h3
               className="text-xl text-black mb-1 transition-colors duration-150 group-hover:text-stone"
-              style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500 }}
+              style={{ fontFamily: 'system-ui, -apple-system, sans-serif', fontWeight: 400 }}
             >
               {project.title}
             </h3>

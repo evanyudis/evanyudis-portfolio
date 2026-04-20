@@ -42,7 +42,7 @@ export function CopyEmailButton({
         onClick={handleCopy}
         className={`
           inline-flex items-center justify-center gap-1.5
-          px-3 py-1.5 text-sm font-medium rounded-full
+          px-3 py-1.5 text-sm font-normal rounded-full
           transition-all duration-150 ease-out
           ${copied
             ? 'bg-black text-white border border-black'
@@ -71,9 +71,9 @@ export function CopyEmailButton({
   return (
     <button
       onClick={handleCopy}
-      className={`
+        className={`
         inline-flex items-center justify-center gap-2
-        px-5 py-2 text-sm font-medium rounded-full
+        px-5 py-2 text-sm font-normal rounded-full
         transition-all duration-150 ease-out
         ${copied
           ? 'bg-black text-white border border-black'

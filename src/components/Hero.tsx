@@ -63,7 +63,7 @@ export function Hero() {
           <p className="animate-in mb-4 leading-relaxed" style={{
             fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: '16px',
-            fontWeight: 450,
+            fontWeight: 400,
             color: '#737373',
             letterSpacing: '0px',
             lineHeight: '1.4'
@@ -80,7 +80,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 400 }}
               >
                 Kredivo
               </a>
@@ -97,7 +97,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 400 }}
               >
                 Bytedance
               </a>
@@ -114,7 +114,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 400 }}
               >
                 Tokopedia
               </a>
@@ -131,7 +131,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-company-link"
-                style={{ color: '#737373', fontWeight: 500 }}
+                style={{ color: '#737373', fontWeight: 400 }}
               >
                 Astronauts
               </a>
