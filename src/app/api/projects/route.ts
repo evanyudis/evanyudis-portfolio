@@ -5,7 +5,7 @@ export async function GET() {
   const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/projects?select=slug,title,tags,year,cover_image,role,team,context,background,impact&order=created_at.desc`,
+    `${SUPABASE_URL}/rest/v1/projects?select=slug,title,tags,year,cover_image,role,team,context,background,impact`,
     {
       headers: {
         apikey: SUPABASE_KEY,

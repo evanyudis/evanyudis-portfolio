@@ -11,7 +11,7 @@ export default function HomePage() {
 
       {/* Work Grid */}
       <section id="work" className="w-full py-[88px] px-6">
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           <p className="text-xs font-mono text-[#a3a3a3] mb-3 tracking-wider uppercase">
             Selected Projects
           </p>
@@ -24,7 +24,7 @@ export default function HomePage() {
 
       {/* Experience */}
       <section id="experience" className="w-full py-[88px] px-6" style={{ backgroundColor: '#fafafa' }}>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal stagger selector=".experience-item">
             <ExperienceList />
           </ScrollReveal>
