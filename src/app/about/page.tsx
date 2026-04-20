@@ -72,11 +72,11 @@ export default function AboutPage() {
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.04)',
                 borderRadius: '12px',
-                padding: '12px 16px',
+                padding: '8px 8px',
                 display: 'inline-flex',
               }}
             >
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {[
                   { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
                   { name: 'Obsidian', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/obsidian/obsidian-original.svg' },
@@ -95,12 +95,12 @@ export default function AboutPage() {
                       src={tool.icon}
                       alt={tool.name}
                       style={{
-                        width: '36px',
-                        height: '36px',
+                        width: '44px',
+                        height: '44px',
                         objectFit: 'contain',
                         backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                        borderRadius: '6px',
-                        padding: '4px',
+                        borderRadius: '8px',
+                        padding: '6px',
                       }}
                     />
                   </div>
