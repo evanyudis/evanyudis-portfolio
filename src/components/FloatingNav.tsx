@@ -5,9 +5,9 @@ import { CopyEmailButton } from '@/components/ui/CopyEmailButton'
 
 export function FloatingNav() {
   return (
-    <nav className="fixed bottom-6 left-4 right-4 z-50 pointer-events-none">
+    <nav className="fixed bottom-6 left-4 right-4 z-50 flex justify-center pointer-events-none">
       <div
-        className="max-w-screen-xl mx-auto pointer-events-auto rounded-full"
+        className="pointer-events-auto flex items-center rounded-full"
         style={{
           backdropFilter: 'blur(24px) saturate(200%)',
           WebkitBackdropFilter: 'blur(24px) saturate(200%)',
@@ -18,13 +18,13 @@ export function FloatingNav() {
         }}
       >
         <div
-          className="flex items-center justify-end gap-1 px-2 py-1"
+          className="flex items-center"
           style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif' }}
         >
           {/* Index */}
           <Link
             href="/"
-            className="px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="flex-1 min-w-0 text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             Index
@@ -33,14 +33,16 @@ export function FloatingNav() {
           {/* About */}
           <Link
             href="/about"
-            className="px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
+            className="flex-1 min-w-0 text-center px-3 py-1.5 text-sm font-medium no-underline rounded-full transition-all duration-150 hover:bg-black/5 active:scale-95"
             style={{ color: '#737373' }}
           >
             About
           </Link>
 
           {/* Reach Out */}
-          <CopyEmailButton variant="nav" />
+          <div className="flex-1 min-w-0">
+            <CopyEmailButton variant="nav" className="w-full justify-center" />
+          </div>
         </div>
       </div>
     </nav>
