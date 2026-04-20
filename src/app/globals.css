@@ -178,18 +178,15 @@ a:hover {
    STACK ICONS — dock-style squares
    ============================================ */
 .stack-icon {
-  width: 44px;
-  height: 44px;
-  background-color: rgba(0, 0, 0, 0.04);
-  border-radius: 8px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease, transform 0.15s ease;
+  transition: transform 0.15s ease;
 }
 
 .stack-icon:hover {
-  background-color: rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 .bg-darkest-surface { background-color: var(--color-darkest-surface); }
