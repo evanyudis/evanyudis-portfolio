@@ -36,8 +36,10 @@ export function ProjectGrid() {
     })
   }, [])
 
-  // Filter logic — for now All shows everything
-  const filtered = projects
+  // Filter by category
+  const filtered = activeCategory === 'All'
+    ? projects
+    : projects.filter((p) => p.tags?.includes(activeCategory))
 
   if (loading) {
     return (
@@ -98,6 +100,25 @@ export function ProjectGrid() {
 
             {/* Info — bottom */}
             <div className="max-w-[640px]">
+              {/* Tag pills */}
+              {project.tags && project.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-0.5 rounded-full text-xs"
+                      style={{
+                        backgroundColor: '#e5e5e5',
+                        color: '#525252',
+                        fontFamily: 'var(--font-geist), system-ui, sans-serif',
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
               {/* Title + year */}
               <div className="flex items-center justify-between mb-3">
                 <h3
