@@ -12,6 +12,7 @@ interface Project {
   context?: string
   background?: string
   impact?: string
+  thumbnail_url?: string
 }
 
 type Category = 'All' | 'Commercial' | 'My products' | 'Awards'
@@ -23,6 +24,13 @@ async function fetchProjects(): Promise<Project[]> {
 }
 
 const CATEGORIES: Category[] = ['All', 'Commercial', 'My products', 'Awards']
+
+// Generate a consistent placeholder image based on slug
+function getPlaceholderImage(slug: string): string {
+  const colors = ['E5E5E5', 'D4D4D4', 'E8E8E8', 'F0F0F0', 'EBEBEB']
+  const color = colors[slug.charCodeAt(0) % colors.length]
+  return `https://via.placeholder.com/600x400/${color}/737373?text=${encodeURIComponent(slug.split('-')[0])}`
+}
 
 export function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -49,9 +57,10 @@ export function ProjectGrid() {
             <div key={cat} className="bg-[#e5e5e5] animate-pulse rounded-full" style={{ width: '80px', height: '32px' }} />
           ))}
         </div>
-        <div className="flex flex-col gap-8">
-          {[1, 2].map((i) => (
-            <div key={i} className="bg-[#e5e5e5] animate-pulse" style={{ height: '320px' }} />
+        {/* 2-col skeleton */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="bg-[#e5e5e5] animate-pulse rounded-xl" style={{ height: '340px' }} />
           ))}
         </div>
       </div>
@@ -82,34 +91,35 @@ export function ProjectGrid() {
         ))}
       </div>
 
-      {/* Projects list — vertical stack */}
-      <div className="flex flex-col">
+      {/* Projects grid — 2 columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filtered.map((project) => (
           <a
             key={project.slug}
             href={`/projects/${project.slug}`}
-            className="project-item group block border-b border-[#e5e5e5] py-8 transition-all duration-200 hover:border-[#737373]"
+            className="project-item group block bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-[#e5e5e5]"
           >
-            {/* Visual — full width, top */}
-            <div
-              className="w-full bg-[#e5e5e5] flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-[1.005]"
-              style={{ height: '260px' }}
-            >
-              <span className="text-[#a3a3a3] text-xs uppercase tracking-wider">Project Visual</span>
+            {/* Thumbnail */}
+            <div className="w-full bg-[#f5f5f5] overflow-hidden" style={{ aspectRatio: '16/10' }}>
+              <img
+                src={project.thumbnail_url || getPlaceholderImage(project.slug)}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
 
-            {/* Info — bottom */}
-            <div className="max-w-[640px]">
-              {/* Tag pills */}
+            {/* Card content */}
+            <div className="p-5">
+              {/* Tags */}
               {project.tags && project.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.slice(0, 3).map((tag) => (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 rounded-full text-xs"
+                      className="px-2 py-0.5 rounded-full text-xs"
                       style={{
-                        backgroundColor: '#e5e5e5',
-                        color: '#525252',
+                        backgroundColor: '#f5f5f5',
+                        color: '#737373',
                         fontFamily: 'var(--font-geist), system-ui, sans-serif',
                       }}
                     >
@@ -119,29 +129,28 @@ export function ProjectGrid() {
                 </div>
               )}
 
-              {/* Title + year */}
-              <div className="flex items-center justify-between mb-3">
+              {/* Title + Year */}
+              <div className="flex items-start justify-between mb-2 gap-2">
                 <h3
-                  className="text-xl text-black transition-colors duration-200 group-hover:text-stone"
-                  style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400, letterSpacing: '-0.02em' }}
+                  className="text-lg text-black transition-colors duration-200 group-hover:text-stone"
+                  style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500, letterSpacing: '-0.02em' }}
                 >
                   {project.title}
                 </h3>
                 {project.year && (
-                  <span className="text-xs text-[#a3a3a3]" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>
+                  <span className="text-xs text-[#a3a3a3] shrink-0" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif' }}>
                     {project.year}
                   </span>
                 )}
               </div>
 
-              {/* Description — two brief sentences */}
+              {/* Context/description */}
               {project.context && (
                 <p
-                  className="text-sm text-[#525252] leading-relaxed mb-4 transition-colors duration-200 group-hover:text-[#737373]"
+                  className="text-sm text-[#737373] leading-relaxed mb-4 line-clamp-2"
                   style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 400 }}
                 >
-                  {project.context.length > 150 ? project.context.slice(0, 150) + '...' : project.context}
-                  {project.background ? ' ' + project.background.slice(0, 80) + (project.background.length > 80 ? '...' : '') : ''}
+                  {project.context.slice(0, 120)}{project.context.length > 120 ? '...' : ''}
                 </p>
               )}
 
@@ -151,11 +160,11 @@ export function ProjectGrid() {
                 style={{
                   fontFamily: 'var(--font-geist), system-ui, sans-serif',
                   fontWeight: 500,
-                  color: '#737373',
+                  color: '#525252',
                 }}
               >
                 View Case Study
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
