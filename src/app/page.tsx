@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero'
 import { ProjectGrid } from '@/components/ProjectGrid'
 import { ExperienceList } from '@/components/ExperienceList'
 import { ToolkitSection } from '@/components/ToolkitSection'
+import { OtherTopics } from '@/components/OtherTopics'
 
 export default function HomePage() {
   return (
@@ -75,6 +76,9 @@ export default function HomePage() {
 
       {/* Toolkit */}
       <ToolkitSection />
+
+      {/* Other Topics */}
+      <OtherTopics />
 
       {/* Experience */}
       <section id="experience" className="w-full py-[88px] px-6" style={{ backgroundColor: '#fafafa' }}>
